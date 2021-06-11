@@ -1,0 +1,11 @@
+# Ignore the private hosting configuration.
+host-config.yml
+
+# Ignore the private domain list.
+ssldomains
+
+# Ignore the SSL Certification Expiration Checker file.
+ssl-cert-check
+
+# Ignore daily backup directories.
+*-files/
