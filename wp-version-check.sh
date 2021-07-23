@@ -9,11 +9,12 @@ create_variables host-config.yml
 # Loop through configured sites and check the current WordPress version.
 for n in "${!sites__ssh_host[@]}"
 do
-	client=${sites__ssh_host[$n]}
+	hostname=${sites__ssh_host[$n]}
 	domain=${sites__domain[$n]}
+	path=${sites__path[$n]}
 
 	echo "${domain} version check"
-	wp core version --ssh="${client}" --path="www/${domain}/public_html"
-	wp plugin list --update=available --ssh="${client}" --path="www/${domain}/public_html"
-	wp theme list --update=available --ssh="${client}" --path="www/${domain}/public_html"
+	wp core version --ssh="${hostname}" --path="${path}"
+	wp plugin list --update=available --ssh="${hostname}" --path="${path}"
+	wp theme list --update=available --ssh="${hostname}" --path="${path}"
 done

@@ -15,12 +15,14 @@ create_variables host-config.yml
 # Loop through configured sites and create database backups.
 for n in "${!sites__ssh_host[@]}"
 do
-	client=${sites__ssh_host[$n]}
+	hostname=${sites__ssh_host[$n]}
+	project=${sites__project[$n]}
 	domain=${sites__domain[$n]}
+	path=${sites__path[$n]}
 
-	echo "Exporting ${client} at ${domain}"
-	wp db export "${date_full}-${client}.sql" --ssh="${client}" --path="www/${domain}/public_html"
-	ssh $client "rm *.sql.gz"
-	ssh $client "gzip ${date_full}-${client}.sql"
-	scp $client:"${date_full}-${client}.sql.gz" "./${date_full}-db-files/"
+	echo "Exporting ${project} at ${domain}"
+	wp db export "${date_full}-${project}.sql" --ssh="${hostname}" --path="${path}"
+	ssh $hostname "rm *.sql.gz"
+	ssh $hostname "gzip ${date_full}-${project}.sql"
+	scp $hostname:"${date_full}-${project}.sql.gz" "./${date_full}-db-files/"
 done
