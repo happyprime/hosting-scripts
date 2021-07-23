@@ -12,18 +12,22 @@ The current format of the `host-config.yml` file should be:
 --
 sites:
   -
+    project: project
     ssh_host: hostname
     domain: domain.test
+    path: /var/www/domain.test
   -
+    project: otherproject
     ssh_host: othername
     domain: otherdomain.test
+    path: www/otherdomain.test/public_html
 ```
 
-Where `ssh_host` is the configured SSH host in your `./ssh/config` file and `domain` is the actual domain of the site.
+Where `project` is relatively arbitrary, `ssh_host` is the configured SSH host in your `./ssh/config` file, `domain` is the actual domain of the site, and `path` is the path on the server where WordPress is installed.
 
-## Siteground database backup
+## Database backup
 
-`./database-backup-sg.sh` is used to:
+`./database-backup.sh` is used to:
 
 1. Create a daily database backup directory.
 2. Loop through configured sites.
