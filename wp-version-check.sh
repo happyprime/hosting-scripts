@@ -15,6 +15,6 @@ do
 
 	echo "${domain} version check"
 	wp core version --ssh="${hostname}" --path="${path}"
-	wp plugin list --update=available --ssh="${hostname}" --path="${path}"
-	wp theme list --update=available --ssh="${hostname}" --path="${path}"
+	wp plugin list --update=available --ssh="${hostname}" --path="${path}" --format=json > plugin-updates/${domain}-plugins.json 2>&1
+	wp theme list --update=available --ssh="${hostname}" --path="${path}" --format=json > theme-updates/${domain}-themes.json 2>&1
 done

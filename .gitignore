@@ -9,3 +9,6 @@ ssl-cert-check
 
 # Ignore daily backup directories.
 *-files/
+
+# Ignore update collection directories.
+*-updates/
