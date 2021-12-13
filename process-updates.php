@@ -46,6 +46,10 @@ function post_new_issue() {
 	$body_text  = process_plugin_updates();
 	$bot_token  = trim( file_get_contents( 'bot-token' ) );
 
+	if ( '' === $body_text ) {
+		die( "No plugin updates available.\n" );
+	}
+
 	$new_issue_curl = curl_init( 'https://api.github.com/repos/happyprime/hosting/issues' );
 
 	curl_setopt_array(
