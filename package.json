@@ -1,0 +1,23 @@
+{
+  "name": "hosting-scripts",
+  "version": "1.0.0",
+  "description": "A set of rudimentary scripts used to automate tasks related to hosting in some way or another.",
+  "main": "index.js",
+  "scripts": {
+	"check":"npm run check:updates & npm run check:ssl",
+	"check:updates":"./wp-version-check.sh",
+	"issue:updates":"php process-updates.php",
+	"check:ssl":"./ssl-cert-check -f ssldomains",
+    "backup:db":"./database-backup.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/happyprime/hosting-scripts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/happyprime/hosting-scripts/issues"
+  },
+  "homepage": "https://github.com/happyprime/hosting-scripts#readme"
+}
