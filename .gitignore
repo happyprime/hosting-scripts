@@ -4,6 +4,9 @@ host-config.yml
 # Ignore the private domain list.
 ssldomains
 
+# Ignore the private bot token used with GitHub's API.
+bot-token
+
 # Ignore the SSL Certification Expiration Checker file.
 ssl-cert-check
 
