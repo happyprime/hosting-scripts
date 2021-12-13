@@ -44,7 +44,7 @@ function process_plugin_updates() {
 function post_new_issue() {
 	$title_text = date( 'F j, Y') . ' Hosted plugin updates';
 	$body_text  = process_plugin_updates();
-	$bot_token  = file_get_contents( 'bot-token' );
+	$bot_token  = trim( file_get_contents( 'bot-token' ) );
 
 	$new_issue_curl = curl_init( 'https://api.github.com/repos/happyprime/hosting/issues' );
 
