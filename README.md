@@ -40,11 +40,13 @@ Where `project` is relatively arbitrary, `ssh_host` is the configured SSH host i
 
 `npm run check:updates` is used to:
 
-1. Check for available WordPress core updates.
-2. Check for available plugin updates.
-3. Check for available theme updates.
+1. Display the current WordPress version for each host.
+2. Log available plugin updates for each host in `plugin-updates/{host}-plugins.json`
+3. Log available theme updates for each host in `theme-updates/{host}-themes.json`
 
-Ideally, most sites are configured to handle these automatically.
+`npm run issue:updates` is used to process the JSON files in `plugin-updates/` and open a new GitHub issue with a list of tasks corresponding with each available update.
+
+* A `bot-token` file must exist in your working directory with a personal access token.
 
 ## Long term storage
 
