@@ -26,3 +26,6 @@ do
 	ssh $hostname "gzip ${date_full}-${project}.sql"
 	scp $hostname:"${date_full}-${project}.sql.gz" "./${date_full}-db-files/"
 done
+
+# Synchronize DB backup with B2.
+b2 sync "${date_full}-db-files" "b2://happy-prime-hosting/${date_full}-db-files/"
