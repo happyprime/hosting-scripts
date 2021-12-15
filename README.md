@@ -36,6 +36,17 @@ Where `project` is relatively arbitrary, `ssh_host` is the configured SSH host i
 5. Transfer the database locally with `scp`.
 6. Sync the daily database backup directory with B2.
 
+## wp-content backup
+
+`npm run backup:files` is used to:
+
+1. Create a daily content backup directory.
+2. Loop through configured sites.
+3. Compress each site's `wp-content` directory into a tar file.
+4. Transfer the files locally with `scp`.
+
+This command runs a full backup for each site and does not handle incremental changes. This will result in a *lot* of data transfer.
+
 ## WordPress core, plugin, and theme version checks
 
 `npm run check:updates` is used to:
