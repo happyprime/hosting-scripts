@@ -4,7 +4,7 @@
   "description": "A set of rudimentary scripts used to automate tasks related to hosting in some way or another.",
   "main": "index.js",
   "scripts": {
-	"check":"npm run check:updates & npm run check:ssl",
+	"check":"npm run backup:db && npm run check:updates && npm run issue:updates && npm run check:ssl",
 	"check:updates":"./wp-version-check.sh",
 	"issue:updates":"php process-updates.php",
 	"check:ssl":"./ssl-cert-check -f ssldomains",
