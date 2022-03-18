@@ -16,14 +16,16 @@ sites:
     ssh_host: hostname
     domain: domain.test
     path: /var/www/domain.test
+	auto: false
   -
     project: otherproject
     ssh_host: othername
     domain: otherdomain.test
     path: www/otherdomain.test/public_html
+	auto: true
 ```
 
-Where `project` is relatively arbitrary, `ssh_host` is the configured SSH host in your `./ssh/config` file, `domain` is the actual domain of the site, and `path` is the path on the server where WordPress is installed.
+Where `project` is relatively arbitrary, `ssh_host` is the configured SSH host in your `./ssh/config` file, `domain` is the actual domain of the site, `path` is the path on the server where WordPress is installed, and `auto` is whether plugins can be updated via script.
 
 ## Database backup
 
