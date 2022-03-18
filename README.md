@@ -56,7 +56,7 @@ This command runs a full backup for each site and does not handle incremental ch
 1. Display the current WordPress version for each host.
 2. Log available plugin updates for each host in `plugin-updates/{host}-plugins.json`
 3. Log available theme updates for each host in `theme-updates/{host}-themes.json`
-  * These are relatively unimportant to us as all themes are custom and deployed in other ways.
+    * These are relatively unimportant to us as all themes are custom and deployed in other ways.
 
 `npm run issue:updates` is used to process the JSON files in `plugin-updates/` and open a new GitHub issue with a list of tasks corresponding with each available update.
 
