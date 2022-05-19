@@ -8,6 +8,7 @@
 	"check:updates":"./wp-version-check.sh",
 	"issue:updates":"php process-updates.php",
 	"check:ssl":"./ssl-cert-check -f ssldomains",
+	"check:whois":"./whois-check.sh",
 	"backup:db":"./database-backup.sh",
 	"backup:files":"./wp-content-backup.sh",
 	"update:plugins":"./auto-update-plugins.sh"
