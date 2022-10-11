@@ -14,7 +14,7 @@ function process_plugin_updates() {
 		$file_name = str_replace( '-plugins.json', '', array_pop( $file_name ) );
 
 		$json_contents = file_get_contents( $file );
-		$json_contents = json_decode( $json_contents );
+		$json_contents = (array) json_decode( $json_contents );
 
 		if ( 0 === count( $json_contents ) ) {
 			continue;
