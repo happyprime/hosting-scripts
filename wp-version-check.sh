@@ -6,6 +6,9 @@ source includes/yaml.sh
 # Create variables from our host config file.
 create_variables host-config.yml
 
+# Remove any previous run's update files.
+rm plugin-updates/*-plugins.json
+
 # Loop through configured sites and check the current WordPress version.
 for n in "${!sites__ssh_host[@]}"
 do

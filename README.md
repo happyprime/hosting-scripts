@@ -9,7 +9,6 @@ Some scripts rely on a YAML formatted host configuration. One is not included wi
 The current format of the `host-config.yml` file should be:
 
 ```
---
 sites:
   -
     project: project
